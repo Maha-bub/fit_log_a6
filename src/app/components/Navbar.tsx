@@ -10,7 +10,7 @@ const links =
     </>
 const Navbar = () => {
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto p-4  border-b border-b-slate-600">
             <div className="navbar bg-base-100 shadow-sm">
                 {/* for mobile */}
                 <div className="navbar-start lg:hidden">
