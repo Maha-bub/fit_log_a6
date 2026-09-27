@@ -31,7 +31,7 @@ const Navbar = () => {
                 </div>
 
 
-                <div className='abso left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:navbar-start'>
+                <div className='absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:navbar-start'>
                     <Link href={`/`} className='flex items-center justify-center'>
                         <Image src={logo} alt={`Logo`} width={30} height={30}></Image>
                         <span className="btn btn-ghost text-xl font-bold">FITLOG</span>
