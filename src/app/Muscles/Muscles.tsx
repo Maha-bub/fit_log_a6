@@ -10,7 +10,7 @@ const Muscles = async () => {
     // console.log(musclesData)
     return (
         <div>
-            <div>
+            <div className="grid-cols-1 w-10/12 sm:w-11/12 lg:w-full lg:grid lg:grid-cols-3 grid-rows-4 gap-4 container mx-auto">
                 {
                     musclesData.map((muscle, idx) => <MusclesCard key={idx} muscle={muscle}></MusclesCard>)
                 }

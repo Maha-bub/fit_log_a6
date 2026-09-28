@@ -6,7 +6,7 @@ import { PiBowlFoodLight } from 'react-icons/pi';
 const MusclesCard = ({ muscle }) => {
     const { id, image, name, muscleGroups, equipment, difficulty, duration, caloriesBurned, sets, rating } = muscle;
     return (
-        <div>
+        <div className='p-2'>
             <div>
                 <Image
                     src={image}
@@ -34,17 +34,17 @@ const MusclesCard = ({ muscle }) => {
                         </li>
                     ))}
                 </ul>
-                <span>
+                <span className='text-md font-semibold'>
                     {equipment.split(',')}
                 </span>
 
 
-                <h2>{name}</h2>
-                <hr />
-                <div className='flex justify-start gap-4'>
-                    <span><IoMdTimer />{duration}</span>
-                    <span><PiBowlFoodLight />{caloriesBurned}</span>
-                    <span><IoIosStarOutline />{rating}</span>
+                <h2 className='text-2xl font-bold py-3 border-b border-slate-600'>{name}</h2>
+            
+                <div className='flex justify-start gap-4 py-3'>
+                    <span className='flex justify-between items-center text-md font-semibold'><IoMdTimer />{duration}</span>
+                    <span className='flex justify-between items-center text-md font-semibold'><PiBowlFoodLight />{caloriesBurned}</span>
+                    <span className='flex justify-between items-center text-md font-semibold'><IoIosStarOutline />{rating}</span>
                 </div>
             </div>
 
