@@ -3,6 +3,7 @@ import { MuscleType } from "@/types/muscle.type";
 import Image from "next/image";
 import { HiBookmark } from "react-icons/hi";
 import TodaysPlanButton from "../MuscleDetailButtons/TodaysPlanButton";
+import SaveLetter from "../MuscleDetailButtons/SavedLetter";
 
 interface MuscleDetailProps {
     muscle: MuscleType
@@ -109,10 +110,8 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                         }
                     </ul>
                     <div className=" flex flex-col mx-auto md:flex-row justify-start gap-4 items-center">
-                       <TodaysPlanButton muscle={muscle}></TodaysPlanButton>
-                        <button className='btn btn-outline text-lg border rounded-xl border-slate-500 font-semibold'>
-                            <HiBookmark className="" /> Save for letter
-                        </button>
+                        <TodaysPlanButton muscle={muscle}></TodaysPlanButton>
+                        <SaveLetter muscle={muscle}></SaveLetter>
                     </div>
                 </div>
             </div>
