@@ -1,3 +1,4 @@
+import { MuscleType } from "@/types/muscle.type";
 import MusclesCard from "../components/MusclesCard";
 
 const getMuscles = async () => {
@@ -14,7 +15,7 @@ const Muscles = async () => {
             <p className="text-lg font-sans">Twelve lifts covering every major muscle group.</p>
             <div className="grid-cols-1 w-10/12 sm:w-11/12 lg:w-full lg:grid lg:grid-cols-3 grid-rows-4 gap-4 ">
                 {
-                    musclesData.map((muscle) => <MusclesCard key={muscle.id} muscle={muscle}></MusclesCard>)
+                    musclesData.map((muscle: MuscleType) => <MusclesCard key={muscle.id} muscle={muscle}></MusclesCard>)
                 }
             </div>
 
