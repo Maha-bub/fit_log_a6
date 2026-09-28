@@ -13,14 +13,16 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
     return (
         <div className="container mx-auto">
             <div className="flex justify-center items-center gap-6">
-                <Image
-                    src={muscle.image}
-                    width={500}
-                    height={500}
-                    alt={muscle.name}
-                    className="w-6/12 rounded-2xl"
-                >
-                </Image>
+                <figure className="lg:w-1/3 bg-base-200 p-6">
+                    <Image
+                        src={muscle.image}
+                        alt={muscle.name}
+                        width={400}
+                        height={350}
+                        unoptimized
+                        className="w-full h-96 object-contain rounded-lg"
+                    />
+                </figure>
                 <div>
                     <h2 className="text-4xl font-bold">{muscle.name}</h2>
                     <p className="text-lg text-gray-400" >{muscle.description}</p>
