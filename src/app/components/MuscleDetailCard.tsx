@@ -1,8 +1,8 @@
+
 import { MuscleType } from "@/types/muscle.type";
 import Image from "next/image";
 import { HiBookmark } from "react-icons/hi";
-import { LuNotepadText } from "react-icons/lu";
-import { MdToday } from "react-icons/md";
+import TodaysPlanButton from "../MuscleDetailButtons/TodaysPlanButton";
 
 interface MuscleDetailProps {
     muscle: MuscleType
@@ -109,9 +109,7 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                         }
                     </ul>
                     <div className=" flex flex-col mx-auto md:flex-row justify-start gap-4 items-center">
-                        <button className='btn bg-[#C6F602] text-lg border rounded-xl text-black font-semibold'>
-                            <MdToday /> Add to today&apos;s plan
-                        </button>
+                       <TodaysPlanButton muscle={muscle}></TodaysPlanButton>
                         <button className='btn btn-outline text-lg border rounded-xl border-slate-500 font-semibold'>
                             <HiBookmark className="" /> Save for letter
                         </button>

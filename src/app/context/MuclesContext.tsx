@@ -1,27 +1,22 @@
 'use client'
 
-import { ReactNode, useState } from "react";
-import { createContext } from "vm";
+import { createContext, ReactNode, useState } from "react";
 
-const MuscleContext = createContext({})
+
+export const MuscleContext = createContext({})
 const MuclesContextProvider = ({ children }: { children: ReactNode }) => {
 
-    const { todaysPlan, setTodaysPlan } = useState([])
-    const { saveLetter, setSaveLetter } = useState([])
+    const [ todaysPlan, setTodaysPlan ] = useState([])
+    const [ saveLetter, setSaveLetter ] = useState([])
 
-    const stateAssets={
+    const stateAssets = {
         todaysPlan,
         setTodaysPlan,
         saveLetter,
         setSaveLetter
     }
 
-    return (
-        <MuscleContext.Provider value={stateAssets}>
-            {children}
-        </MuscleContext.Provider>
-
-    );
+    return <MuscleContext.Provider value={stateAssets}>{children}</MuscleContext.Provider>
 };
 
 export default MuclesContextProvider;
