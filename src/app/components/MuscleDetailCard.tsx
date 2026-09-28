@@ -11,7 +11,7 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
     console.log(muscle, 'clicked muscled ');
     const { muscleGroups, equipment, difficulty, reps, duration, caloriesBurned, rating, sets, instructions } = muscle;
     return (
-        <div className="container mx-auto mt-12">
+        <div className="container mx-auto mt-5 md:mt10 lg:mt-12">
             <div className="flex flex-col-reverse justify-center gap-6 py-5 lg:flex-row">
 
                 <Image
@@ -19,13 +19,13 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                     width={400}
                     height={500}
                     alt={muscle.name}
-                    className="w-6/12 rounded-2xl"
+                    className="w-6/12 mx-auto rounded-2xl"
                 >
                 </Image>
 
                 <div className="space-y-3 mx-auto w-10/12 max-w-full">
-                    <h2 className="text-4xl font-bold">{muscle.name}</h2>
-                    <p className="text-lg text-gray-400" >{muscle.description}</p>
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{muscle.name}</h2>
+                    <p className="sm:text-lg text-gray-400" >{muscle.description}</p>
                     <ul className="flex gap-3 mt-3 mb-3">
                         {muscleGroups.map((batch) => (
                             <li
@@ -38,8 +38,8 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                     </ul>
                     <div className="overflow-hidden rounded-2xl border border-gray-800 bg-[#15171D]">
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
-                            <span className="text-sm font-semibold uppercase text-gray-400">
+                        <p className="flex items-center text-sm md:text-lg justify-between border-b border-gray-800 px-6 py-1 md:py-3">
+                            <span className="text-sm md:font-semibold uppercase text-gray-400">
                                 Equipment
                             </span>
                             <span className="text-gray-200">
@@ -47,8 +47,8 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
-                            <span className="text-sm font-semibold uppercase text-gray-400">
+                        <p className="flex items-center text-sm md:text-lg justify-between border-b border-gray-800 px-6 py-1 md:py-3">
+                            <span className="text-sm md:font-semibold uppercase text-gray-400">
                                 Difficulty
                             </span>
                             <span className="text-gray-200">
@@ -56,8 +56,8 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
-                            <span className="text-sm font-semibold uppercase text-gray-400">
+                        <p className="flex items-center text-sm md:text-lg justify-between border-b border-gray-800 px-6 py-1 md:py-3">
+                            <span className="text-sm md:font-semibold uppercase text-gray-400">
                                 Sets
                             </span>
                             <span className="text-gray-200">
@@ -65,8 +65,8 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
-                            <span className="text-sm font-semibold uppercase text-gray-400">
+                        <p className="flex items-center text-sm md:text-lg justify-between border-b border-gray-800 px-6 py-1 md:py-3">
+                            <span className="text-sm md:font-semibold uppercase text-gray-400">
                                 Reps
                             </span>
                             <span className="text-gray-200">
@@ -74,8 +74,8 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
-                            <span className="text-sm font-semibold uppercase text-gray-400">
+                        <p className="flex items-center text-sm md:text-lg justify-between border-b border-gray-800 px-6 py-1 md:py-3">
+                            <span className="text-sm md:font-semibold uppercase text-gray-400">
                                 Duration
                             </span>
                             <span className="text-gray-200">
@@ -83,8 +83,8 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
-                            <span className="text-sm font-semibold uppercase text-gray-400">
+                        <p className="flex items-center text-sm md:text-lg justify-between border-b border-gray-800  px-6 py-1 md:py-3">
+                            <span className="text-sm md:font-semibold uppercase text-gray-400">
                                 Calories
                             </span>
                             <span className="text-gray-200">
@@ -92,8 +92,8 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between px-6 py-3">
-                            <span className="text-sm font-semibold uppercase text-gray-400">
+                        <p className="flex items-center text-sm md:text-lg  justify-between px-6 py-1 md:py-3">
+                            <span className="text-sm md:font-semibold uppercase text-gray-400">
                                 Rating
                             </span>
                             <span className="text-gray-200">
