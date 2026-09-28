@@ -11,8 +11,8 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
     console.log(muscle, 'clicked muscled ');
     const { muscleGroups, equipment, difficulty, reps, duration, caloriesBurned, rating, sets, instructions } = muscle;
     return (
-        <div className="container mx-auto my-10">
-            <div className="flex justify-center items-center gap-6 py-5 my-5">
+        <div className="container mx-auto mt-12">
+            <div className="flex flex-col-reverse justify-center gap-6 py-5 lg:flex-row">
 
                 <Image
                     src={muscle.image}
@@ -23,7 +23,7 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                 >
                 </Image>
 
-                <div className="space-y-3 mt-6">
+                <div className="space-y-3 mx-auto w-10/12 max-w-full">
                     <h2 className="text-4xl font-bold">{muscle.name}</h2>
                     <p className="text-lg text-gray-400" >{muscle.description}</p>
                     <ul className="flex gap-3 mt-3 mb-3">
@@ -38,7 +38,7 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                     </ul>
                     <div className="overflow-hidden rounded-2xl border border-gray-800 bg-[#15171D]">
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
                             <span className="text-sm font-semibold uppercase text-gray-400">
                                 Equipment
                             </span>
@@ -47,7 +47,7 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
                             <span className="text-sm font-semibold uppercase text-gray-400">
                                 Difficulty
                             </span>
@@ -56,7 +56,7 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
                             <span className="text-sm font-semibold uppercase text-gray-400">
                                 Sets
                             </span>
@@ -65,7 +65,7 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
                             <span className="text-sm font-semibold uppercase text-gray-400">
                                 Reps
                             </span>
@@ -74,7 +74,7 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
                             <span className="text-sm font-semibold uppercase text-gray-400">
                                 Duration
                             </span>
@@ -83,7 +83,7 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-3">
                             <span className="text-sm font-semibold uppercase text-gray-400">
                                 Calories
                             </span>
@@ -92,7 +92,7 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </span>
                         </p>
 
-                        <p className="flex items-center justify-between px-6 py-5">
+                        <p className="flex items-center justify-between px-6 py-3">
                             <span className="text-sm font-semibold uppercase text-gray-400">
                                 Rating
                             </span>
@@ -105,10 +105,10 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                     <h3 className="text-3xl font-semibold">Instructions</h3>
                     <ul>
                         {
-                            instructions.map((instruction, idx) => <li className="text-lg text-gray-400" key={idx}> <span>{idx + 1}.{instruction}</span></li>)
+                            instructions.map((instruction, idx) => <li className="text-sm md:text-lg text-gray-400" key={idx}> <span>{idx + 1}.{instruction}</span></li>)
                         }
                     </ul>
-                    <div className="flex justify-start gap-4 items-center">
+                    <div className=" flex flex-col mx-auto md:flex-row justify-start gap-4 items-center">
                         <button className='btn bg-[#C6F602] text-lg border rounded-xl text-black font-semibold'>
                             <MdToday /> Add to today&apos;s plan
                         </button>
