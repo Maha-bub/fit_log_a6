@@ -1,7 +1,6 @@
 import { MuscleType } from '@/types/muscle.type';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 import { IoIosStarOutline } from 'react-icons/io';
 import { MdOutlineWatchLater } from 'react-icons/md';
 import { PiBowlFoodLight } from 'react-icons/pi';
@@ -13,7 +12,7 @@ const MusclesCard = ({ muscle }: MuscleTypeProps) => {
     const { image, name, muscleGroups, equipment, duration, caloriesBurned, rating } = muscle;
     return (
         <div className='p-2'>
-            <Link href={`/`}>
+            <Link href={`muscles/${muscle.id}`}>
                 <Image
                     src={image}
                     width={400}
