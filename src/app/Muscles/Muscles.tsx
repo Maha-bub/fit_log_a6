@@ -9,10 +9,12 @@ const Muscles = async () => {
     const musclesData = await getMuscles();
     // console.log(musclesData)
     return (
-        <div>
-            <div className="grid-cols-1 w-10/12 sm:w-11/12 lg:w-full lg:grid lg:grid-cols-3 grid-rows-4 gap-4 container mx-auto">
+        <div className="container mx-auto space-y-3 px-4">
+            <h2 className="text-3xl font-semibold uppercase ">The Library</h2>
+            <p className="text-lg font-sans">Twelve lifts covering every major muscle group.</p>
+            <div className="grid-cols-1 w-10/12 sm:w-11/12 lg:w-full lg:grid lg:grid-cols-3 grid-rows-4 gap-4 ">
                 {
-                    musclesData.map((muscle, idx) => <MusclesCard key={idx} muscle={muscle}></MusclesCard>)
+                    musclesData.map((muscle) => <MusclesCard key={muscle.id} muscle={muscle}></MusclesCard>)
                 }
             </div>
 

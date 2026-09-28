@@ -4,7 +4,7 @@ import bannerImg from '@/assets/banner.png'
 
 const Banner = () => {
     return (
-        <div className='container mx-auto flex flex-col lg:flex-row justify-center items-center bg-[#15171D] mt-12 rounded-2xl py-12 px-6 '>
+        <div className='container mx-auto flex flex-col lg:flex-row justify-center items-center bg-[#15171D] my-12 rounded-2xl py-12 px-6 '>
             <div className='space-y-2 mb-4 md:space-y-3'>
                 <h2 className='font-semibold text-[#C6F602] uppercase text-sm'>Workout Library</h2>
                 <h1 className='text-4xl md:text-6xl font-bold uppercase'>Train with intent.Log <br /> every set.</h1>
@@ -12,11 +12,11 @@ const Banner = () => {
                     Browse workouts
                 </button>
             </div>
-            <div>
+            <div className="mx-auto w-full max-w-2xl px-4 text-center">
                 <Image
                     src={bannerImg}
                     alt='Banner Image'
-                    width={500}
+                    width={400}
                     className=' mt-3'
                 ></Image>
             </div>
