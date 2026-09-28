@@ -29,14 +29,71 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
                             </li>
                         ))}
                     </ul>
-                    <div className=" ">
-                        <p className="flex justify-between"><span className="text-sm font-semibold uppercase ">Equipment</span> <span>{equipment}</span></p>
-                        <p className="flex justify-between"><span className="text-sm font-semibold uppercase ">Difficulty</span> <span>{difficulty}</span></p>
-                        <p className="flex justify-between"><span className="text-sm font-semibold uppercase ">Sets</span> <span>{sets}</span></p>
-                        <p className="flex justify-between"><span className="text-sm font-semibold uppercase ">Reps</span> <span>{reps}</span></p>
-                        <p className="flex justify-between"><span className="text-sm font-semibold uppercase ">Duration</span> <span>{duration}</span></p>
-                        <p className="flex justify-between"><span className="text-sm font-semibold uppercase ">Calories</span> <span>{caloriesBurned}</span></p>
-                        <p className="flex justify-between"><span className="text-sm font-semibold uppercase ">Rating</span> <span>{rating}</span></p>
+                    <div className="overflow-hidden rounded-2xl border border-gray-800 bg-[#15171D]">
+
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                            <span className="text-sm font-semibold uppercase text-gray-400">
+                                Equipment
+                            </span>
+                            <span className="text-gray-200">
+                                {equipment}
+                            </span>
+                        </p>
+
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                            <span className="text-sm font-semibold uppercase text-gray-400">
+                                Difficulty
+                            </span>
+                            <span className="text-gray-200">
+                                {difficulty}
+                            </span>
+                        </p>
+
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                            <span className="text-sm font-semibold uppercase text-gray-400">
+                                Sets
+                            </span>
+                            <span className="text-gray-200">
+                                {sets}
+                            </span>
+                        </p>
+
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                            <span className="text-sm font-semibold uppercase text-gray-400">
+                                Reps
+                            </span>
+                            <span className="text-gray-200">
+                                {reps}
+                            </span>
+                        </p>
+
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                            <span className="text-sm font-semibold uppercase text-gray-400">
+                                Duration
+                            </span>
+                            <span className="text-gray-200">
+                                {duration}
+                            </span>
+                        </p>
+
+                        <p className="flex items-center justify-between border-b border-gray-800 px-6 py-5">
+                            <span className="text-sm font-semibold uppercase text-gray-400">
+                                Calories
+                            </span>
+                            <span className="text-gray-200">
+                                {caloriesBurned}
+                            </span>
+                        </p>
+
+                        <p className="flex items-center justify-between px-6 py-5">
+                            <span className="text-sm font-semibold uppercase text-gray-400">
+                                Rating
+                            </span>
+                            <span className="text-gray-200">
+                                {rating}
+                            </span>
+                        </p>
+
                     </div>
 
                 </div>
