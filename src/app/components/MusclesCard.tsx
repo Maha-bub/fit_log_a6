@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { IoIosStarOutline, IoMdTimer } from 'react-icons/io';
+import { IoIosStarOutline } from 'react-icons/io';
+import { MdOutlineWatchLater } from 'react-icons/md';
 import { PiBowlFoodLight } from 'react-icons/pi';
 
 const MusclesCard = ({ muscle }) => {
@@ -14,7 +15,7 @@ const MusclesCard = ({ muscle }) => {
                     width={400}
                     height={300}
                     alt={name}
-                    unoptimized
+                    // unoptimized
                     className="w-full h-60 object-cover rounded-t-xl"
                 />
 
@@ -36,7 +37,7 @@ const MusclesCard = ({ muscle }) => {
                 <h2 className='text-2xl font-bold py-3 border-b border-slate-600'>{name}</h2>
 
                 <div className='flex justify-items-start space-x-6 py-3'>
-                    <span className='flex gap-1 justify-between items-center text-md font-semibold'><IoMdTimer />{duration}</span>
+                    <span className='flex gap-1 justify-between items-center text-md font-semibold'><MdOutlineWatchLater />{duration}</span>
                     <span className='flex gap-1 justify-between items-center text-md font-semibold'><PiBowlFoodLight />{caloriesBurned}</span>
                     <span className='flex gap-1 justify-between items-center text-md font-semibold'><IoIosStarOutline />{rating}</span>
                 </div>
