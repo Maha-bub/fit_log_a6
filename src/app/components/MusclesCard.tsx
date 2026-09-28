@@ -27,23 +27,23 @@ const MusclesCard = ({ muscle }: MuscleTypeProps) => {
                     {muscleGroups.map((muscle) => (
                         <li
                             key={muscle}
-                            className="text-[16px] bg-[#C6F602] py-0.5 px-4 font-semibold rounded-full text-black"
+                            className="text-[16px] bg-[#C6F602] py-0.5 px-4 rounded-full text-black"
                         >
                             {muscle}
                         </li>
                     ))}
                 </ul>
-                <span className='text-md font-semibold my-2'>
+
+
+                <h2 className='text-2xl font-bold '>{name}</h2>
+                <div className='text-md mb-1 pb-4 border-b border-slate-600'>
                     {equipment.split(',')}
-                </span>
-
-
-                <h2 className='text-2xl font-bold py-3 border-b border-slate-600'>{name}</h2>
+                </div>
 
                 <div className='flex justify-items-start space-x-6 py-3'>
-                    <span className='flex gap-1 justify-between items-center text-md font-semibold'><MdOutlineWatchLater />{duration}</span>
-                    <span className='flex gap-1 justify-between items-center text-md font-semibold'><PiBowlFoodLight />{caloriesBurned}</span>
-                    <span className='flex gap-1 justify-between items-center text-md font-semibold'><IoIosStarOutline />{rating}</span>
+                    <span className='flex gap-2 justify-between items-center text-md '><MdOutlineWatchLater />{duration}</span>
+                    <span className='flex gap-2 justify-between items-center text-md '><PiBowlFoodLight />{caloriesBurned}</span>
+                    <span className='flex gap-2 justify-between items-center text-md '><IoIosStarOutline />{rating}</span>
                 </div>
             </Link>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from './components/Banner';
-import Muscles from './Muscles/Muscles';
+import Muscles from './Muscles/page';
 
 const page = () => (
   <div>
