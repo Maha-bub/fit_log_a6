@@ -11,22 +11,22 @@ const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
     console.log(muscle, 'clicked muscled ');
     const { muscleGroups, equipment, difficulty, reps, duration, caloriesBurned, rating, sets, instructions } = muscle;
     return (
-        <div className="container mx-auto">
-            <div className="flex justify-center items-center gap-6">
-                <figure className="lg:w-1/3 bg-base-200 p-6">
-                    <Image
-                        src={muscle.image}
-                        alt={muscle.name}
-                        width={400}
-                        height={350}
-                        unoptimized
-                        className="w-full h-96 object-contain rounded-lg"
-                    />
-                </figure>
-                <div>
+        <div className="container mx-auto my-10">
+            <div className="flex justify-center items-center gap-6 py-5 my-5">
+
+                <Image
+                    src={muscle.image}
+                    width={400}
+                    height={500}
+                    alt={muscle.name}
+                    className="w-6/12 rounded-2xl"
+                >
+                </Image>
+
+                <div className="space-y-3 mt-6">
                     <h2 className="text-4xl font-bold">{muscle.name}</h2>
                     <p className="text-lg text-gray-400" >{muscle.description}</p>
-                    <ul className="flex gap-3 mt-5 mb-3">
+                    <ul className="flex gap-3 mt-3 mb-3">
                         {muscleGroups.map((batch) => (
                             <li
                                 key={batch}
