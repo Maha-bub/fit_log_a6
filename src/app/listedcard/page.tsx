@@ -1,10 +1,20 @@
 'use client'
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { MuscleContext } from '../context/MuclesContext';
 import { MuscleType } from '@/types/muscle.type';
 
 const ListedDetailsPage = () => {
+
+    const [isActive, setIsActive] = useState(true);
+
+    const handleTabBtn = (result: boolean) => {
+        return setIsActive(result);
+
+    }
+
+
     const { todaysPlan, saveLetter } = useContext(MuscleContext);
+
     const totalDuration = todaysPlan.reduce((accumulator: number, currentMunites: MuscleType) => {
         return accumulator + currentMunites.duration;
     }, 0);
@@ -25,36 +35,44 @@ const ListedDetailsPage = () => {
                 </div>
                 <div>
                     <h2 className='text-lg text-gray-400 font-semibold'>Minutes</h2>
-                    <p className='text-4xl font-bold text-[#C6F602]'>{totalDuration > 0 ? totalDuration : 0}</p>
+                    <p className='text-4xl font-bold '>{totalDuration > 0 ? totalDuration : 0}</p>
                 </div>
                 <div>
                     <div className='mr-6'>
                         <h2 className='text-lg text-gray-400 font-semibold'>Calories</h2>
-                        <p className='text-4xl font-bold text-[#C6F602]'>{totalCalories > 0 ? totalCalories : 0}</p>
+                        <p className='text-4xl font-bold'>{totalCalories > 0 ? totalCalories : 0}</p>
                     </div>
                 </div>
 
 
 
             </div>
-            <div className="flex justify-between items-center w-full bg-[#13161D] border rounded-lg border-slate-600 p-2">
+            <div className="flex justify-between items-center w-full bg-[#13161D] border rounded-lg border-slate-600 py-3 px-4">
 
-                <div className='tabs tabs-box '>
-                    <input type="radio" name="my_tabs_3" className="tab" aria-label="Tab 1" defaultChecked />
-                    <div className="tab-content bg-base-100 border-base-300 p-6">Tab content 1</div>
+                <div className='flex bg-[#181C24] justify-between rounded-lg p-1 border border-gray-500'>
 
-                    <input type="radio" name="my_tabs_3" className="tab" aria-label="Tab 2" />
-                    <div className="tab-content bg-base-100 border-base-300 p-6">Tab content 2</div>
+                    <button
+                        onClick={() => handleTabBtn(true)}
+                        className={`btn bg-[#252930] py-1 px-2 rounded-md ${isActive ? 'bg-[#252930] text-white'
+                            : 'bg-transparent text-gray-500'}`}
+                    >
+                        Today&apos;s Plan
+                    </button>
+                    <button
+                        onClick={() => handleTabBtn(false)}
+                        className={`btn bg-[#252930] py-1 px-2 rounded-md ${!isActive ? 'bg-[#252930] text-white'
+                            : 'bg-transparent text-gray-500'}`} >
+                        Saved Letter
+                    </button>
 
 
-                    <input type="radio" name="my_tabs_3" className="tab" aria-label="Tab 3" />
-                    <div className="tab-content bg-base-100 border-base-300 p-6">Tab content 3</div>
+
                 </div>
                 <select defaultValue="Pick a Runtime" className="select select-success">
-                    <option disabled={true}>Pick a Runtime</option>
-                    <option>npm</option>
-                    <option>Bun</option>
-                    <option>yarn</option>
+                    <option disabled={true}>Select</option>
+                    <option>Durations</option>
+                    <option>Calories</option>
+                    <option>Rating</option>
                 </select>
 
 
