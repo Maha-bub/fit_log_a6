@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist} from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en" data-theme='dark'
+      lang="en"
       suppressHydrationWarning
       className={`${geistSans.variable} ${inter.className} h-full antialiased`}
     >

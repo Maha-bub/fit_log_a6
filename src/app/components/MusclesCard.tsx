@@ -18,7 +18,6 @@ const MusclesCard = ({ muscle }: MuscleTypeProps) => {
                     width={400}
                     height={300}
                     alt={name}
-
                     className="w-full text-center h-40 md:h-60 object-cover rounded-t-xl"
                 />
 
