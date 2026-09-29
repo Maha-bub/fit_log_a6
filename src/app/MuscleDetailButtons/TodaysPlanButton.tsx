@@ -15,11 +15,13 @@ const TodaysPlanButton = ({ muscle }: { muscle: MuscleType }) => {
     const handleTodaysPlan = () => {
 
         if (todaysPlan.some(plan => plan.id === muscle.id)) {
-            throw new Error('This data already added')
+            toast.warning('Already added !')
+            return
         }
-        toast.warning('Already added !')
 
         setTodaysPlan([...todaysPlan, muscle])
+        toast.success('Card added successfully!')
+
         // console.log(todaysPlan)
     }
     return (

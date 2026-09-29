@@ -1,7 +1,6 @@
 
 import { MuscleType } from "@/types/muscle.type";
 import Image from "next/image";
-import { HiBookmark } from "react-icons/hi";
 import TodaysPlanButton from "../MuscleDetailButtons/TodaysPlanButton";
 import SaveLetter from "../MuscleDetailButtons/SavedLetter";
 
@@ -9,7 +8,7 @@ interface MuscleDetailProps {
     muscle: MuscleType
 }
 const MuscleDetailCard = ({ muscle }: MuscleDetailProps) => {
-    console.log(muscle, 'clicked muscled ');
+    // console.log(muscle, 'clicked muscled ');
     const { muscleGroups, equipment, difficulty, reps, duration, caloriesBurned, rating, sets, instructions } = muscle;
     return (
         <div className="container mx-auto mt-5 md:mt10 lg:mt-12">

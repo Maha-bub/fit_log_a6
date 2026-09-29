@@ -15,12 +15,14 @@ const SaveLetter = ({ muscle }: { muscle: MuscleType }) => {
     const handleSavedLetter = () => {
 
         if (saveLetter.some(saveLetter => saveLetter.id === muscle.id)) {
-            throw new Error('This data already added')
+            toast.warning('Already added !')
+            return;
         }
-        toast.warning('Already added !')
+
 
         setSaveLetter([...saveLetter, muscle])
-        // console.log(saveLetter)
+        toast.success('Card added successfully!')
+        console.log(saveLetter)
     }
     return (
         <button className='btn btn-outline text-lg border rounded-xl border-slate-500 font-semibold'

@@ -5,8 +5,8 @@ import logo from '@/assets/logo.png';
 
 const links =
     <>
-        <li><Link href={``} className='btn text-[#C6F602] rounded-full bg-[#24311a]'>Workouts</Link></li>
-        <li><Link href={``} className='btn text-[#C6F602] rounded-full bg-[#24311a]'>My Plan</Link></li>
+        <li><Link href={`/`} className='btn text-[#C6F602] rounded-full bg-[#24311a]'>Workouts</Link></li>
+        <li><Link href={`/listedcard`} className='btn text-[#C6F602] rounded-full bg-[#24311a]'>My Plan</Link></li>
     </>
 const Navbar = () => {
     return (
@@ -32,9 +32,9 @@ const Navbar = () => {
 
 
                 <div className='absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:navbar-start'>
-                    <Link href={`/`} className='flex items-center justify-center'>
+                    <Link href={`/`} className='flex items-center justify-center btn btn-ghost'>
                         <Image src={logo} alt={`Logo`} width={30} height={30}></Image>
-                        <span className="btn btn-ghost text-xl font-bold">FITLOG</span>
+                        <span className=" text-xl font-bold">FITLOG</span>
                     </Link>
 
                 </div >
@@ -46,8 +46,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2">
-                    <Link href={``}> Plan</Link>
-                    <Link href={``}> Saved</Link>
+                    <Link href={`/listedcard`}> Plan</Link>
+                    <Link href={`/listedcard`}> Saved</Link>
                 </div>
             </div >
         </div >

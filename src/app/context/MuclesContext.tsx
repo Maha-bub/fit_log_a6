@@ -6,8 +6,8 @@ import { createContext, ReactNode, useState } from "react";
 export const MuscleContext = createContext({})
 const MuclesContextProvider = ({ children }: { children: ReactNode }) => {
 
-    const [ todaysPlan, setTodaysPlan ] = useState([])
-    const [ saveLetter, setSaveLetter ] = useState([])
+    const [todaysPlan, setTodaysPlan] = useState([])
+    const [saveLetter, setSaveLetter] = useState([])
 
     const stateAssets = {
         todaysPlan,
