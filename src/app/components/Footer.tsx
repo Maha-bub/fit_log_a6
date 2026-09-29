@@ -21,8 +21,8 @@ const Footer = () => {
                 </div>
 
             
-                <p className="text-center text-sm md:text-base">
-                    © {new Date().getFullYear()} Fitlog -Workout Library. Train hard, log honest.
+                <p className="text-sm md:text-base">
+                    &copy; {new Date().getFullYear()} Fitlog -Workout Library. Train hard, log honest.
                 </p>
 
             </div>
