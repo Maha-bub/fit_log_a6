@@ -5,6 +5,8 @@ import { MuscleType } from '@/types/muscle.type';
 
 import Link from 'next/link';
 import ListedCard from '../components/ListedCard';
+import NoDataSelected from '../components/NoDataSelected';
+import SortCard from '../components/SortCard';
 
 const ListedDetailsPage = () => {
 
@@ -99,38 +101,35 @@ const ListedDetailsPage = () => {
                                 : 'bg-transparent text-gray-500 font-extralight'}`} >
                             Saved Letter
                         </button>
-
-
-
                     </div>
-                    <select defaultValue="Pick a Runtime" className="select select-success">
-                        <option disabled={true}>Select</option>
-                        <option>Durations</option>
-                        <option>Calories</option>
-                        <option>Rating</option>
-                    </select>
+                    <SortCard></SortCard>
 
 
 
                 </div>
-                {todaysPlan.length > 0 ?
+                {isActive ? (
+                    todaysPlan.length > 0 ?
 
-                    <div className='container grid grid-cols-1 gap-2'>
-                        {
-                            todaysPlan.map((card) => <ListedCard card={card} key={card.id}></ListedCard>)
-                        }
+                        <div className='container grid grid-cols-1 gap-2'>
+                            {
+                                todaysPlan.map((card) => <ListedCard card={card} key={card.id}></ListedCard>)
+                            }
 
 
-                    </div> :
-                    <div className='container mx-auto max-h-80 text-center items-center bg-[#13161D] rounded-lg py-14 space-y-2'>
-                        <h2 className='text-3xl font-bold '>Noting added Yet.</h2>
-                        <p className='text-lg text-gray-400'>Browse the library and add a lift to get today moving.</p>
-                        <Link href={`/`}>
-                            <button className='btn bg-[#C6F602] text-lg border rounded-full py-3 text-black font-semibold'>
-                                Browse workouts
-                            </button>
-                        </Link>
-                    </div>}
+                        </div> : <NoDataSelected></NoDataSelected>
+                ) :
+                    (saveLetter.length > 0 ?
+
+                        <div className='container grid grid-cols-1 gap-2'>
+                            {
+                                saveLetter.map((card) => <ListedCard card={card} key={card.id}></ListedCard>)
+                            }
+
+
+                        </div> : <NoDataSelected></NoDataSelected>
+                    )
+
+                }
 
             </div>
 
