@@ -11,7 +11,7 @@ interface MuscleTypeProps {
 const MusclesCard = ({ muscle }: MuscleTypeProps) => {
     const { image, name, muscleGroups, equipment, duration, caloriesBurned, rating } = muscle;
     return (
-        <div className=''>
+        <div className='mb-4'>
             <Link href={`muscles/${muscle.id}`}>
                 <Image
                     src={image}
@@ -19,7 +19,7 @@ const MusclesCard = ({ muscle }: MuscleTypeProps) => {
                     height={300}
                     alt={name}
 
-                    className="w-full h-60 object-cover rounded-t-xl"
+                    className="w-full text-center h-40 md:h-60 object-cover rounded-t-xl"
                 />
 
                 <div className='px-3 bg-gray-800 border border-gray-600 rounded-b-2xl'>
@@ -27,7 +27,7 @@ const MusclesCard = ({ muscle }: MuscleTypeProps) => {
                         {muscleGroups.map((muscle) => (
                             <li
                                 key={muscle}
-                                className="text-[16px] bg-[#C6F602] py-0.5 px-4 rounded-full text-black"
+                                className="text-[16px] bg-[#C6F602] sm:py-0.5 px-2 md:px-4 rounded-full text-black"
                             >
                                 {muscle}
                             </li>
@@ -35,8 +35,8 @@ const MusclesCard = ({ muscle }: MuscleTypeProps) => {
                     </ul>
 
 
-                    <h2 className='text-2xl font-bold '>{name}</h2>
-                    <div className='text-md mb-1 pb-4 border-b border-slate-600'>
+                    <h2 className='text-xl md:text-2xl font-bold '>{name}</h2>
+                    <div className='text-sm md:text-md mb-1 pb-4 border-b border-slate-600'>
                         {equipment.split(',')}
                     </div>
 
