@@ -20,7 +20,7 @@ const TodaysPlanButton = ({ muscle }: { muscle: MuscleType }) => {
         }
 
         setTodaysPlan([...todaysPlan, muscle])
-        toast.success('Card added successfully!')
+        toast.success(`${muscle.name} saved for letter successfully!`)
 
         // console.log(todaysPlan)
     }

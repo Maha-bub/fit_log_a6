@@ -15,13 +15,13 @@ const SaveLetter = ({ muscle }: { muscle: MuscleType }) => {
     const handleSavedLetter = () => {
 
         if (saveLetter.some(saveLetter => saveLetter.id === muscle.id)) {
-            toast.warning('Already added !')
+            toast.warning('Already added to Save Letter !')
             return;
         }
 
 
         setSaveLetter([...saveLetter, muscle])
-        toast.success('Card added successfully!')
+        toast.success(`${muscle.name} saved for letter successfully!`)
         console.log(saveLetter)
     }
     return (

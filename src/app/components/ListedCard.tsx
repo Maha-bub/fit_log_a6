@@ -1,9 +1,9 @@
 import { MuscleType } from "@/types/muscle.type";
 import Image from "next/image";
 import { IoIosStarOutline } from "react-icons/io";
-import { IoTrashBin } from "react-icons/io5";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { PiBowlFoodLight } from "react-icons/pi";
+import RemoveCard from "./RemoveCard";
 
 const ListedCard = ({ card }: { card: MuscleType }) => {
     const { image, name, equipment, rating, caloriesBurned, duration } = card;
@@ -32,7 +32,7 @@ const ListedCard = ({ card }: { card: MuscleType }) => {
             <div className="flex gap-4 px-5">
                 <button className="btn btn-outline text-lg border rounded-full py-3 font-semibold">Viwe Details</button>
                 <button className='btn bg-[#C6F602] text-lg border rounded-full py-3 text-black font-semibold'>Marks as done</button>
-                <button> <IoTrashBin /></button>
+               <RemoveCard key={card.id} card={card}></RemoveCard>
             </div>
 
 

@@ -37,8 +37,8 @@ const ListedDetailsPage = () => {
     return (
         <div className="container mx-auto space-y-5 mt-12 px-4">
             <div>
-                <h2 className="text-3xl font-bold uppercase ">The Library</h2>
-                <p className="text-lg font-sans text-gray-400">Twelve lifts covering every major muscle group.</p>
+                <h2 className="text-3xl font-bold uppercase ">The Plan</h2>
+                <p className="text-lg font-sans text-gray-400">Cap of five lifts for today. Finish them, then load more.</p>
             </div>
 
             {isActive ? <div className="lg:flex justify-between mx-auto items-center bg-[#13161D] rounded-2xl px-4 py-5">
