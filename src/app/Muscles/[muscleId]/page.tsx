@@ -1,6 +1,6 @@
 import MuscleDetailCard from '@/app/components/MuscleDetailCard';
 import { MuscleType } from '@/types/muscle.type';
-import React from 'react';
+
 interface MuscleParamsProps {
     params: Promise<{
         muscleId: number;

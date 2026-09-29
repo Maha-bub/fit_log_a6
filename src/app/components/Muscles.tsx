@@ -1,5 +1,5 @@
 import { MuscleType } from "@/types/muscle.type";
-import MusclesCard from "../components/MusclesCard";
+import MusclesCard from "./MusclesCard";
 
 const getMuscles = async (): Promise<MuscleType[]> => {
     const res = await fetch('https://api.abcz.workers.dev/api/fitlog')
