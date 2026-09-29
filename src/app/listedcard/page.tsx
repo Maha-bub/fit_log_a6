@@ -2,11 +2,10 @@
 import { useContext, useState } from 'react';
 import { MuscleContext } from '../context/MuclesContext';
 import { MuscleType } from '@/types/muscle.type';
-
-import Link from 'next/link';
 import ListedCard from '../components/ListedCard';
 import NoDataSelected from '../components/NoDataSelected';
 import SortCard from '../components/SortCard';
+import { MuscleContextType } from '@/types/muscleContext.type';
 
 const ListedDetailsPage = () => {
 
@@ -18,7 +17,7 @@ const ListedDetailsPage = () => {
     }
 
 
-    const { todaysPlan, saveLetter } = useContext(MuscleContext);
+    const { todaysPlan, saveLetter } = useContext(MuscleContext) as MuscleContextType;;
 
     const totalDuration = todaysPlan.reduce((accumulator: number, currentMunites: MuscleType) => {
         return accumulator + currentMunites.duration;
@@ -112,7 +111,7 @@ const ListedDetailsPage = () => {
 
                         <div className='container grid grid-cols-1 gap-2'>
                             {
-                                todaysPlan.map((card) => <ListedCard card={card} key={card.id}></ListedCard>)
+                                todaysPlan.map((card: MuscleType) => <ListedCard card={card} key={card.id}></ListedCard>)
                             }
 
 
@@ -122,7 +121,7 @@ const ListedDetailsPage = () => {
 
                         <div className='container grid grid-cols-1 gap-2'>
                             {
-                                saveLetter.map((card) => <ListedCard card={card} key={card.id}></ListedCard>)
+                                saveLetter.map((card: MuscleType) => <ListedCard card={card} key={card.id}></ListedCard>)
                             }
 
 

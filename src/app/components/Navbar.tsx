@@ -1,14 +1,18 @@
 import Link from 'next/link';
-import React from 'react';
 import Image from 'next/image';
 import logo from '@/assets/logo.png';
-
+import NavButton from './NavButton';
 const links =
     <>
         <li><Link href={`/`} className='btn text-[#C6F602] rounded-full bg-[#24311a]'>Workouts</Link></li>
         <li><Link href={`/listedcard`} className='btn text-[#C6F602] rounded-full bg-[#24311a]'>My Plan</Link></li>
     </>
 const Navbar = () => {
+
+
+
+
+
     return (
         <div className="container mx-auto p-4  border-b border-b-slate-600">
             <div className="navbar bg-base-100 shadow-sm">
@@ -45,10 +49,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end gap-2">
-                    <Link href={`/listedcard`}> Plan</Link>
-                    <Link href={`/listedcard`}> Saved</Link>
-                </div>
+                <NavButton></NavButton>
             </div >
         </div >
 
