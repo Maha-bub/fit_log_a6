@@ -4,6 +4,8 @@ import { IoIosStarOutline } from "react-icons/io";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { PiBowlFoodLight } from "react-icons/pi";
 import RemoveCard from "./RemoveCard";
+import Link from "next/link";
+
 
 const ListedCard = ({ card }: { card: MuscleType }) => {
     const { image, name, equipment, rating, caloriesBurned, duration } = card;
@@ -30,9 +32,13 @@ const ListedCard = ({ card }: { card: MuscleType }) => {
                 </div>
             </div>
             <div className="flex gap-4 px-5">
-                <button className="btn btn-outline text-lg border rounded-full py-3 font-semibold">Viwe Details</button>
+                <Link href={`muscles/${card.id}`}>
+                    <button className="btn btn-outline text-lg border rounded-full py-3 font-semibold">Viwe Details</button>
+                </Link>
+
                 <button className='btn bg-[#C6F602] text-lg border rounded-full py-3 text-black font-semibold'>Marks as done</button>
-               <RemoveCard key={card.id} card={card}></RemoveCard>
+
+                <RemoveCard key={card.id} card={card}></RemoveCard>
             </div>
 
 

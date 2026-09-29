@@ -1,18 +1,16 @@
+'use client'
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/assets/logo.png';
 import NavButton from './NavButton';
-const links =
-    <>
-        <li><Link href={`/`} className='btn text-[#C6F602] rounded-full bg-[#24311a]'>Workouts</Link></li>
-        <li><Link href={`/listedcard`} className='btn text-[#C6F602] rounded-full bg-[#24311a]'>My Plan</Link></li>
-    </>
+import { usePathname } from 'next/navigation';
 const Navbar = () => {
-
-
-
-
-
+    const pathName = usePathname();
+    const links =
+        <>
+            <li><Link href={`/`} className={`btn ${pathName === '/' ? 'bg-[#24311a] text-[#C6F602]':''} rounded-full`}>Workouts</Link></li>
+            <li><Link href={`/listedcard`} className={`btn ${pathName === '/listedcard' ? 'bg-[#24311a] text-[#C6F602]':''} rounded-full`}>My Plan</Link></li>
+        </>
     return (
         <div className="container mx-auto p-4  border-b border-b-slate-600">
             <div className="navbar bg-base-100 shadow-sm">
