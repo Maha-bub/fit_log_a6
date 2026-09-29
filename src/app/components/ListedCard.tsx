@@ -5,6 +5,7 @@ import { MdOutlineWatchLater } from "react-icons/md";
 import { PiBowlFoodLight } from "react-icons/pi";
 import RemoveCard from "./RemoveCard";
 import Link from "next/link";
+import MarksAsDone from "../MuscleDetailButtons/MarksAsDone";
 
 
 const ListedCard = ({ card }: { card: MuscleType }) => {
@@ -36,8 +37,7 @@ const ListedCard = ({ card }: { card: MuscleType }) => {
                     <button className="btn btn-outline text-lg border rounded-full py-3 font-semibold">Viwe Details</button>
                 </Link>
 
-                <button className='btn bg-[#C6F602] text-lg border rounded-full py-3 text-black font-semibold'>Marks as done</button>
-
+                <MarksAsDone></MarksAsDone>
                 <RemoveCard key={card.id} card={card}></RemoveCard>
             </div>
 

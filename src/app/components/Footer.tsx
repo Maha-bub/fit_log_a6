@@ -12,10 +12,10 @@ const Footer = () => {
                         width={50}
                         height={50}
                         alt="Fitlog logo"
-                        className="w-10 h-10 object-contain"
+                        className="w-5 md:w-10 h-10 object-contain"
                     />
 
-                    <h1 className="text-3xl font-bold text-white uppercase">
+                    <h1 className="text-lg md:text-2xl lg:text-3xl font-bold text-white uppercase">
                         Fitlog
                     </h1>
                 </div>

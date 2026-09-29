@@ -8,9 +8,15 @@ import { MuscleType } from "@/types/muscle.type";
 
 const RemoveCard = ({ card }: { card: MuscleType }) => {
     const { todaysPlan, setTodaysPlan, saveLetter, setSaveLetter } = useContext(MuscleContext) as MuscleContextType;
+
+
     const handleRemoveCard = (card: MuscleType) => {
+
+        
         const remainingCards = todaysPlan.filter(selectedCard => selectedCard.id !== card.id);
         setTodaysPlan(remainingCards);
+
+
         
         const remainingSaveCards = saveLetter.filter(selectedCard => selectedCard.id !== card.id);
         setSaveLetter(remainingSaveCards);
