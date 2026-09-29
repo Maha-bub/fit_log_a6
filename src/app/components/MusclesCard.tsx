@@ -11,7 +11,7 @@ interface MuscleTypeProps {
 const MusclesCard = ({ muscle }: MuscleTypeProps) => {
     const { image, name, muscleGroups, equipment, duration, caloriesBurned, rating } = muscle;
     return (
-        <div className='mb-4'>
+        <div className='mb-4 hover:border hover:border-amber-200 hover:rounded-xl'>
             <Link href={`muscles/${muscle.id}`}>
                 <Image
                     src={image}
