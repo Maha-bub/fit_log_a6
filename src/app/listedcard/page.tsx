@@ -137,7 +137,7 @@ const ListedDetailsPage = () => {
 
                         <div className='container grid grid-cols-1 gap-2'>
                             {
-                                sortedTodaysPlan.map((card: MuscleType) => <ListedCard card={card} key={card.id}></ListedCard>)
+                                sortedTodaysPlan.map((card: MuscleType) => <ListedCard card={card} type="todaysplan" key={card.id}></ListedCard>)
                             }
 
 
@@ -147,7 +147,7 @@ const ListedDetailsPage = () => {
 
                         <div className='container grid grid-cols-1 gap-2'>
                             {
-                                sortedSaveLetter.map((card: MuscleType) => <ListedCard card={card} key={card.id}></ListedCard>)
+                                sortedSaveLetter.map((card: MuscleType) => <ListedCard card={card} type="saveLetter" key={card.id}></ListedCard>)
                             }
 
 

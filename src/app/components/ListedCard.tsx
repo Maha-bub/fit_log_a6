@@ -8,8 +8,11 @@ import Link from "next/link";
 import MarksAsDone from "../MuscleDetailButtons/MarksAsDone";
 import { FcViewDetails } from "react-icons/fc";
 
-
-const ListedCard = ({ card }: { card: MuscleType }) => {
+interface RemoveCardProps {
+    card: MuscleType
+    type: "todaysplan" | "saveLetter";
+}
+const ListedCard = ({ card, type }: RemoveCardProps) => {
     const { image, name, equipment, rating, caloriesBurned, duration } = card;
     return (
         <div className="flex justify-between items-center bg-[#13161D] border border-gray-400 rounded-2xl p-3 mt-5">
@@ -36,11 +39,11 @@ const ListedCard = ({ card }: { card: MuscleType }) => {
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 px-5">
                 <Link href={`muscles/${card.id}`}>
                     <button className="btn md:btn-outline text-sm border rounded-full py-1 md:py-3 flex items-center justify-center gap-2"><span className="hidden md:inline">Viwe Details</span>
-                    <FcViewDetails className="inline md:hidden w-5 h-5" /></button>
+                        <FcViewDetails className="inline md:hidden w-5 h-5" /></button>
                 </Link>
 
                 <MarksAsDone></MarksAsDone>
-                <RemoveCard key={card.id} card={card}></RemoveCard>
+                <RemoveCard key={card.id} card={card} type={type}></RemoveCard>
             </div>
 
 
