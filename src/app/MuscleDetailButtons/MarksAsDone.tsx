@@ -16,14 +16,14 @@ const MarksAsDone = () => {
         <button
             onClick={handleMarksAsDone}
             disabled={isActive}
-            className={`btn text-lg border rounded-full py-3 font-semibold ${isActive
+            className={`btn text-sm md:text-lg md:border rounded-full py-1 md:py-3 md:font-semibold ${isActive
                 ? 'bg-gray-500 text-gray-300 cursor-not-allowed'
                 : 'bg-[#C6F602] text-black'
                 }`}
         >
             {isActive ? (
                 <>
-                    <FaCheck />
+                    <FaCheck className='' />
                     Done
                 </>
             ) : (

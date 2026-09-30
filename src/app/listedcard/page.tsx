@@ -4,7 +4,6 @@ import { MuscleContext } from '../context/MuclesContext';
 import { MuscleType } from '@/types/muscle.type';
 import ListedCard from '../components/ListedCard';
 import NoDataSelected from '../components/NoDataSelected';
-import SortCard from '../components/SortCard';
 import { MuscleContextType } from '@/types/muscleContext.type';
 
 const ListedDetailsPage = () => {
@@ -33,6 +32,23 @@ const ListedDetailsPage = () => {
         return calories + currentItem.caloriesBurned;
     }, 0);
 
+
+    const [sortBy, setSortBy] = useState<"rating" | "calories" | "duration">("rating")
+    // console.log(sortBy, 'sortby')
+
+    const handleSortList = ((muscle: MuscleType[]) => {
+
+        const sortedMuscles = [...muscle]
+        if (sortBy === "rating") {
+            sortedMuscles.sort((a, b) => b.rating - a.rating)
+        } else if (sortBy === "calories") {
+            sortedMuscles.sort((a, b) => a.caloriesBurned - b.caloriesBurned)
+        } else if (sortBy === "duration") { sortedMuscles.sort((a, b) => a.duration - b.duration) }
+        return sortedMuscles;
+
+    });
+    const sortedTodaysPlan = handleSortList(todaysPlan);
+    const sortedSaveLetter = handleSortList(saveLetter);
 
     return (
         <div className="container mx-auto space-y-5 mt-12 px-4">
@@ -99,27 +115,39 @@ const ListedDetailsPage = () => {
                             Saved Letter
                         </button>
                     </div>
-                    <SortCard></SortCard>
+
+
+                    <select
+                        value={sortBy}
+                        onChange={(e) => setSortBy(e.target.value as "rating" | "calories" | "duration")}
+                        defaultValue="Pick a Runtime"
+                        className="select select-success"
+                    >
+                        <option disabled={true}>Sort By</option>
+                        <option value={"rating"}>Rating</option>
+                        <option value={"calories"}>Calories</option>
+                        <option value={"duration"}>Durations</option>
+                    </select>
 
 
 
                 </div>
                 {isActive ? (
-                    todaysPlan.length > 0 ?
+                    sortedTodaysPlan.length > 0 ?
 
                         <div className='container grid grid-cols-1 gap-2'>
                             {
-                                todaysPlan.map((card: MuscleType) => <ListedCard card={card} key={card.id}></ListedCard>)
+                                sortedTodaysPlan.map((card: MuscleType) => <ListedCard card={card} key={card.id}></ListedCard>)
                             }
 
 
                         </div> : <NoDataSelected></NoDataSelected>
                 ) :
-                    (saveLetter.length > 0 ?
+                    (sortedSaveLetter.length > 0 ?
 
                         <div className='container grid grid-cols-1 gap-2'>
                             {
-                                saveLetter.map((card: MuscleType) => <ListedCard card={card} key={card.id}></ListedCard>)
+                                sortedSaveLetter.map((card: MuscleType) => <ListedCard card={card} key={card.id}></ListedCard>)
                             }
 
 
